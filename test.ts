@@ -1,5 +1,10 @@
+/**
+ * 
+ * @param person 
+ * @returns 
+ */
 let greeter = (person: string): string => {
-    return "hello, ${person}";
+    return `hello, ${person}`;
 }
 
 let user = "Jane Weslet"
