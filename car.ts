@@ -1,11 +1,13 @@
-abstract class Car {
+interface MyParameters {color: string, brand: string};
+
+abstract class Car implements MyParameters{
     color: string;
     brand: string;
     state = false;
 
-    constructor(color: string, brand: string){
-        this.color = color;
-        this.brand = brand;
+    constructor(parametrs: MyParameters){
+        this.color = parametrs.color;
+        this.brand = parametrs.brand;
     }
 
     start(): void {
@@ -24,7 +26,10 @@ class blueCar extends Car {
     }
 }
 
-let car = new blueCar('blue',"BMW");
+let car = new blueCar({
+    color: 'red',
+    brand: "BMW"
+});
 
 car.getState()
 car.start()
